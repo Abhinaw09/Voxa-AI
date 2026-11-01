@@ -15,7 +15,7 @@ function ChatWindow() {
         setNewChat
     } = useContext(MyContext);
 
-    const [loading, setLoading,] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [isOpen , setisOpen] = useState(false);
 
 
@@ -39,7 +39,7 @@ function ChatWindow() {
 
         try {
             const response = await fetch(
-                "http://localhost:8080/api/chat",
+                `${import.meta.env.VITE_API_URL}/api/chat`,
                 {
                     method: "POST",
                     headers: {
@@ -96,8 +96,8 @@ function ChatWindow() {
             {
                 isOpen &&
                 <div className ="dropdown">
-                    <div className="dropDownItems" >New Chat <i class="fa-brands fa-signal-messenger"></i></div>
-                     <div className="dropDownItems">Log Out <i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+                    <div className="dropDownItems" >New Chat <i className="fa-brands fa-signal-messenger"></i></div>
+                     <div className="dropDownItems">Log Out <i className="fa-solid fa-arrow-right-from-bracket"></i></div>
                      
                     
                 </div>

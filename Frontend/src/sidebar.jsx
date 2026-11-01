@@ -20,7 +20,7 @@ function Sidebar() {
     // Fetch all previous threads
     const getAllThreads = async () => {
         try {
-            const response = await fetch("http://localhost:8080/api/thread");
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/thread`);
 
             if (!response.ok) {
                 throw new Error("Failed to fetch threads");
@@ -57,7 +57,7 @@ function Sidebar() {
         setcurrThreadId(newThreadId);
 
         try{
-            const response = await fetch(`http://localhost:8080/api/thread/${newThreadId}`);
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/thread/${newThreadId}`);
             const res =await response.json();
             console.log(res);
             setPrevChats(res);
@@ -70,7 +70,7 @@ function Sidebar() {
 
     const deleteThread = async(threadId) =>{
         try{
-        const response=  await fetch(`http://localhost:8080/api/thread/${threadId}`,{method:"delete"});
+        const response=  await fetch(`${import.meta.env.VITE_API_URL}/api/thread/${threadId}`,{method:"delete"});
         const res= await response.json();
         console.log(res);
 

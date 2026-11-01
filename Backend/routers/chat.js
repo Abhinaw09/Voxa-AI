@@ -5,25 +5,25 @@ import getOpenAIAPIResponse from "../utils/voxa.js";
 
 const router = express.Router();
 
-// TEST ROUTE
-router.post("/test", async (req, res) => {
-    try {
-        const thread = new Thread({
-            threadId: "xyz",
-            title: "Testing 1"
-        });
+// // TEST ROUTE
+// router.post("/test", async (req, res) => {
+//     try {
+//         const thread = new Thread({
+//             threadId: "xyz",
+//             title: "Testing 1"
+//         });
 
-        const response = await thread.save();
+//         const response = await thread.save();
 
-        return res.status(201).json(response);
-    } catch (err) {
-        console.error("Test route error:", err);
+//         return res.status(201).json(response);
+//     } catch (err) {
+//         console.error("Test route error:", err);
 
-        return res.status(500).json({
-            error: "Failed to save in database"
-        });
-    }
-});
+//         return res.status(500).json({
+//             error: "Failed to save in database"
+//         });
+//     }
+// });
 
 // GET ALL THREADS
 router.get("/thread", async (req, res) => {
