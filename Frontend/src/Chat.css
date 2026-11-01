@@ -1,0 +1,113 @@
+
+/* Main chat container */
+.chats {
+    width: 100%;
+    max-width: 850px;
+    flex: 1;
+    min-height: 0;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Minimal scrollbar */
+.chats::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chats::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chats::-webkit-scrollbar-thumb {
+    background: #3b414b;
+    border-radius: 10px;
+}
+
+.chats::-webkit-scrollbar-thumb:hover {
+    background: #626b7a;
+}
+
+/* User message wrapper */
+.userDiv {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    font-size: 0.95rem;
+}
+
+/* AI message wrapper */
+.gptDiv {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    font-size: 0.96rem;
+}
+
+/* User message bubble */
+.userMessage {
+    background: linear-gradient(135deg, #303641, #252a33);
+    color: #f1f5f9;
+
+    padding: 12px 18px;
+    border: 1px solid #3c424e;
+    border-radius: 20px 20px 5px 20px;
+
+    max-width: min(75%, 600px);
+    width: fit-content;
+    margin: 0;
+
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* AI response */
+.gptMessage {
+    color: #e2e8f0;
+
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 2px 0;
+
+    line-height: 1.85;
+    font-size: 0.97rem;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+/* Text selection */
+.chats ::selection {
+    background: #64748b;
+    color: #ffffff;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .chats {
+        padding: 1.5rem 1rem;
+        gap: 1.4rem;
+    }
+
+    .userMessage {
+        max-width: 88%;
+        padding: 10px 14px;
+        border-radius: 17px 17px 5px 17px;
+    }
+
+    .gptMessage {
+        font-size: 0.94rem;
+        line-height: 1.75;
+    }
+}

@@ -1,0 +1,12 @@
+# Ignore all node_modules
+node_modules/
+
+# Ignore environment files
+.env
+.env.*
+
+# Keep example env
+!.env.example
+
+# Build files
+dist/

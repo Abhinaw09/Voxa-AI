@@ -1,0 +1,112 @@
+.Sidebar{
+    background-color:  #424243;
+    color:  #959BB5; 
+    height:100vh;
+    width: 280px;
+    display :flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button{
+    display:flex;
+     justify-content: space-between;
+     align-items: center;
+     margin:10px;
+     padding:10px;
+     border-radius: 8px;
+     background-color: transparent;
+     border:solid rgba(255,255,255,0.5);
+     cursor: pointer;
+}
+
+button:hover{
+    background-color: rgba(100,100,100,0.5);
+}
+
+.logo{
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 80%;
+    object-fit:cover;
+}
+
+.history{
+    /* margin:10px; */
+     /* padding:10px; */
+     height:100%;
+     flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 10px;
+    margin: 0;
+    list-style: none;
+}
+
+.history li{
+    list-style-type: none;
+    cursor: pointer;
+    padding:2px 4px;
+    margin-buttom:0.2rem;
+    font-size:16px;
+    border:solid 10px transparent;
+    position:relative;
+}
+
+.history li:hover{
+   background-color:rgba(100,100,100,0.5);
+    border-radius:10px;
+}
+
+button span{
+    font-size:20px;
+}
+
+.sign{
+    margin:10px;
+     padding:10px;
+     font-size: 14px;
+     text-align: center;
+     border-top:solid 0.25px rgba(255,255,255,0.5);
+   
+}
+
+.history::-webkit-scrollbar {
+    width: 6px;
+}
+
+.history::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.history::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+.history::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+.fa-trash{
+    opacity: 0;
+    position:absolute;
+    right:0;
+}
+
+.history li:hover .fa-trash{
+    opacity: 1;
+   color: #fff;
+}
+
+.fa-trash:hover{
+    color: #f87171 !important;
+}
+
+.highlighted{
+    background-color:rgba(180,180,180,0.05);
+    border-radius:10px;
+}
